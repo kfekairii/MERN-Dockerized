@@ -1,0 +1,48 @@
+/*/node_modules
+
+############ WEB ############ 
+# dependencies
+/web/.pnp
+/web/*.pnp.js
+
+# testing
+/web/coverage
+
+# production
+/web/build
+
+# misc
+/web/.DS_Store
+/web/.env.local
+/web/.env.development.local
+/web/.env.test.local
+/web/.env.production.local
+
+/web/npm-debug.log*
+/web/yarn-debug.log*
+/web/yarn-error.log*
+
+############ API ############ 
+/api/dist
+# Logs
+/api/logs
+/api/*.log
+/api/npm-debug.log*
+
+# Runtime data
+/api/pids
+/api/*.pid
+/api/*.seed
+/api/*.pid.lock
+
+# TypeScript cache
+/**/*.tsbuildinfo
+
+# Optional npm cache directory
+/**/.npm
+
+# Optional eslint cache
+/**/.eslintcache
+
+# Optional stylelint cache
+/**/.stylelintcache

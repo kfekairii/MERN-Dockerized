@@ -1,0 +1,37 @@
+version: "3.8"
+services:
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      - "3000:80"
+  api:
+    build:
+      context: .
+      dockerfile: ./api/Dockerfile.dev
+    # ports:
+    #   - "3001:3001"
+    volumes:
+      - /app/node_modules
+      - ./api:/app
+    environment:
+      DB_URL: mongodb://db/database
+  web:
+    build:
+      context: .
+      dockerfile: ./web/Dockerfile.dev
+    # ports:
+    #   - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - ./web:/app
+  db:
+    image: mongo:4.4-bionic
+    # ports:
+    #   - "27018:27017"
+    volumes:
+      - database:/data/db
+volumes:
+  database:
