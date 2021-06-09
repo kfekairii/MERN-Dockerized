@@ -10,23 +10,23 @@ services:
   api:
     build:
       context: .
-      dockerfile: ./api/Dockerfile.dev
+      dockerfile: ./api/Dockerfile
     # ports:
     #   - "3001:3001"
-    volumes:
-      - /app/node_modules
-      - ./api:/app
+    # volumes:
+    # - /app/node_modules
+    # - ./api:/app
     environment:
       DB_URL: mongodb://db/database
   web:
     build:
       context: .
-      dockerfile: ./web/Dockerfile.dev
+      dockerfile: ./web/Dockerfile
     # ports:
     #   - "3000:3000"
-    volumes:
-      - /app/node_modules
-      - ./web:/app
+    # volumes:
+    #   - /app/node_modules
+    #   - ./web:/app
   db:
     image: mongo:4.4-bionic
     # ports:
