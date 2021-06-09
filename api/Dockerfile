@@ -4,8 +4,9 @@ WORKDIR /app
 
 COPY ./api/package.json .
 RUN npm install 
+RUN npm i -g tsc
 
-COPY . .
+COPY ./api .
 RUN npm run build
 
 CMD ["npm","run","start"]

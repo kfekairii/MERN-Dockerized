@@ -19,6 +19,6 @@ connect(
   }
 );
 const app = express();
-app.use("/v1", homeRouter);
+app.use("/api/v1", homeRouter);
 
 app.listen(3001, () => console.log("Server is running on PORT 3001"));
